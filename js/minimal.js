@@ -98,6 +98,72 @@ document.addEventListener('DOMContentLoaded', () => {
     onScroll();
   }
 
+  /* ---- Judul hero: efek mengetik dari kiri ke kanan ----
+     Tiap huruf dijadikan span yang awalnya disembunyikan (bukan dihapus),
+     jadi lebar barisnya sudah final sejak awal. Karena judulnya rata
+     tengah, teks terisi dari kiri ke kanan, bukan melebar dari tengah. */
+  const heroTitle = document.querySelector('.m-hero h1');
+  if (heroTitle) {
+    const sub = heroTitle.querySelector('em');
+    const firstNode = heroTitle.firstChild;
+    const name = firstNode && firstNode.nodeType === 3 ? firstNode.textContent.trim() : '';
+
+    if (name) {
+      /* teks utuh tetap terbaca pembaca layar lewat aria-label */
+      heroTitle.setAttribute('aria-label', sub ? name + '. ' + sub.textContent.trim() : name);
+
+      const line = document.createElement('span');
+      line.className = 'm-type';
+      line.setAttribute('aria-hidden', 'true');
+
+      const steps = [];
+      name.split('').forEach((ch) => {
+        if (ch === ' ') {
+          /* spasi dibiarkan teks biasa supaya baris tetap bisa berpindah
+             baris di layar sempit */
+          const space = document.createTextNode(' ');
+          line.appendChild(space);
+          steps.push({ node: space, isChar: false });
+          return;
+        }
+        const span = document.createElement('span');
+        span.className = 'm-type__ch';
+        span.textContent = ch;
+        line.appendChild(span);
+        steps.push({ node: span, isChar: true });
+      });
+
+      const caret = document.createElement('span');
+      caret.className = 'm-type__caret';
+      line.insertBefore(caret, line.firstChild);
+
+      heroTitle.replaceChildren(line);
+      if (sub) heroTitle.appendChild(sub);
+
+      if (reduceMotion) {
+        caret.remove();
+        steps.forEach((s) => { if (s.isChar) s.node.classList.add('is-on'); });
+        if (sub) sub.classList.add('is-visible');
+      } else {
+        heroTitle.classList.add('is-typing');
+        let i = 0;
+        const type = () => {
+          if (i >= steps.length) {
+            if (sub) sub.classList.add('is-visible');
+            return;
+          }
+          const step = steps[i];
+          if (step.isChar) step.node.classList.add('is-on');
+          step.node.after(caret);
+          i += 1;
+          /* jeda sedikit acak supaya terasa seperti diketik tangan */
+          setTimeout(type, 55 + Math.random() * 45);
+        };
+        setTimeout(type, 350);
+      }
+    }
+  }
+
   /* ---- Stagger otomatis ----
      Anggota sebuah grup (galeri, chip, tool, dll.) diberi data-reveal
      dengan jeda bertingkat supaya muncul berurutan, bukan serentak.
