@@ -1050,3 +1050,45 @@ body.is-leaving .m-main{ animation: m-page-sink .35s var(--ease) both; }
   .m-type__caret{ animation: none; }
   .m-hero h1.is-typing em{ opacity: 1; transform: none; }
 }
+
+/* ==========================================================================
+   VS Code Pets — hewan piksel yang berjalan di atas judul beranda.
+   Elemennya dibuat js/minimal.js, sprite-nya dari repo vscode-pets (CDN).
+   ========================================================================== */
+
+.m-pets{
+  position: relative;
+  height: 46px;
+  max-width: 440px;
+  margin: 0 auto 16px;
+  pointer-events: none;   /* hanya hewannya yang bisa diklik */
+}
+
+/* lantai tempat hewan berpijak */
+.m-pets__floor{
+  position: absolute; left: 0; right: 0; bottom: 0;
+  height: 1px;
+  background: linear-gradient(to right,
+    transparent,
+    var(--hairline) 18%,
+    var(--hairline) 82%,
+    transparent);
+}
+
+.m-pet{
+  position: absolute;
+  bottom: 1px; left: 0;
+  /* sprite aslinya 120x85, tingginya dibiarkan ikut agar tidak gepeng */
+  width: 40px; height: auto;
+  image-rendering: pixelated;          /* jaga ketajaman piksel saat diperbesar */
+  pointer-events: auto;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-drag: none;
+  will-change: transform;
+}
+
+@media (max-width: 640px){
+  .m-pets{ height: 38px; max-width: 260px; }
+  .m-pet{ width: 48px; }
+}

@@ -98,6 +98,110 @@ document.addEventListener('DOMContentLoaded', () => {
     onScroll();
   }
 
+  /* ---- VS Code Pets: hewan piksel berjalan di atas judul ----
+     Sprite diambil dari repo vscode-pets (tonybaloney) lewat CDN jsDelivr,
+     versinya dipatok agar tautan tidak rusak kalau repo berubah.
+     Catatan: sprite kucing memang tidak didistribusikan di repo itu atas
+     permintaan pembuatnya, jadi di sini dipakai anjing. */
+  const petHost = document.querySelector('.m-hero h1');
+  if (petHost && !reduceMotion) {
+    const SPRITE = 'https://cdn.jsdelivr.net/gh/tonybaloney/vscode-pets@1.36.0/media/dog/';
+    const COLOR = 'brown';   /* pilihan lain: akita, black, red, white */
+    const POSE = {
+      walk: SPRITE + COLOR + '_walk_8fps.gif',
+      run: SPRITE + COLOR + '_run_8fps.gif',
+      idle: SPRITE + COLOR + '_idle_8fps.gif',
+      lie: SPRITE + COLOR + '_lie_8fps.gif',
+      swipe: SPRITE + COLOR + '_swipe_8fps.gif',
+    };
+
+    const strip = document.createElement('div');
+    strip.className = 'm-pets';
+    strip.setAttribute('aria-hidden', 'true');
+
+    const floor = document.createElement('span');
+    floor.className = 'm-pets__floor';
+
+    const pet = document.createElement('img');
+    pet.className = 'm-pet';
+    pet.src = POSE.walk;
+    pet.alt = '';
+    pet.draggable = false;
+    pet.title = 'Hi, Im lucky';
+
+    strip.append(floor, pet);
+    petHost.parentNode.insertBefore(strip, petHost);
+
+    const WALK = 26;      /* px per detik */
+    const RUN = 78;
+    let x = 24;
+    let dir = 1;
+    let pose = 'walk';
+    let chaseX = null;    /* posisi kursor saat hewan mengejar */
+    let swipeUntil = 0;
+    let nextChange = performance.now() + 2600 + Math.random() * 2600;
+    let last = performance.now();
+
+    const setPose = (name) => {
+      if (pose === name) return;
+      pose = name;
+      pet.src = POSE[name];
+    };
+
+    const limit = () => Math.max(0, strip.clientWidth - pet.offsetWidth);
+
+    const tick = (now) => {
+      const dt = Math.min((now - last) / 1000, 0.05);   /* tahan lonjakan saat tab tidak aktif */
+      last = now;
+      const max = limit();
+
+      if (now < swipeUntil) {
+        setPose('swipe');
+      } else if (chaseX !== null) {
+        const gap = chaseX - x;
+        if (Math.abs(gap) > 8) {
+          dir = gap > 0 ? 1 : -1;
+          setPose('run');
+          x += dir * RUN * dt;
+        } else {
+          setPose('idle');
+        }
+      } else {
+        if (now > nextChange) {
+          const roll = Math.random();
+          setPose(roll < 0.6 ? 'walk' : roll < 0.85 ? 'idle' : 'lie');
+          if (pose === 'walk' && Math.random() < 0.5) dir *= -1;
+          nextChange = now + 2200 + Math.random() * 3200;
+        }
+        if (pose === 'walk') x += dir * WALK * dt;
+      }
+
+      /* pantul di tepi lantai */
+      if (x < 0) { x = 0; dir = 1; }
+      if (x > max) { x = max; dir = -1; }
+
+      /* sprite menghadap kanan secara bawaan, jadi dibalik saat ke kiri */
+      pet.style.transform = 'translateX(' + x.toFixed(1) + 'px) scaleX(' + (dir < 0 ? -1 : 1) + ')';
+      requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+
+    /* kejar kursor selama mouse berada di area hero */
+    const hero = petHost.closest('.m-hero') || strip;
+    hero.addEventListener('pointermove', (e) => {
+      if (e.pointerType === 'touch') return;
+      const box = strip.getBoundingClientRect();
+      chaseX = Math.max(0, Math.min(e.clientX - box.left - pet.offsetWidth / 2, limit()));
+    });
+    hero.addEventListener('pointerleave', () => { chaseX = null; });
+
+    /* diklik: hewan bereaksi sebentar */
+    pet.addEventListener('click', () => {
+      swipeUntil = performance.now() + 700;
+      nextChange = swipeUntil + 400;
+    });
+  }
+
   /* ---- Judul hero: efek mengetik dari kiri ke kanan ----
      Tiap huruf dijadikan span yang awalnya disembunyikan (bukan dihapus),
      jadi lebar barisnya sudah final sejak awal. Karena judulnya rata
