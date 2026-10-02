@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects</title>
+<meta name="description" content="Data analytics and machine learning projects by Kevin Budiawan Sidarta — dashboards, forecasting models, and classification work.">
+<link rel="icon" type="image/png" href="assets/img/Profil.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/minimal.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
+<!-- ===== Header ===== -->
+<header class="m-header" id="header">
+  <div class="wrap m-header__inner">
+    <a href="index.html" class="m-logo">Kevin Budiawan</a>
+
+    <nav class="m-nav" id="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="experience.html">Experience</a>
+      <a href="projects.html" class="is-active">Projects</a>
+    </nav>
+
+    <button class="m-navtoggle" id="navtoggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main class="m-main">
+
+  <!-- ===== Page head ===== -->
+  <section class="m-pagehead">
+    <div class="wrap wrap--wide" data-reveal>
+      <span class="mono">[ Project archive ]</span>
+      <h1>Selected Projects</h1>
+      <p>Some of my latest works.</p>
+    </div>
+  </section>
+
+  <!-- ===== Projects ===== -->
+  <section class="m-section">
+    <div class="wrap wrap--wide">
+      <div class="m-projects">
+
+        <article class="m-project" data-reveal>
+          <div class="m-project__media">
+            <img src="assets/img/Project_6.png" alt="Sales &amp; Product Performance dashboard preview" loading="lazy">
+          </div>
+          <div>
+            <div class="m-project__tags">Microsoft Excel · Power BI · Business Intelligence</div>
+            <h3>Sales &amp; Product Performance Analysis Dashboard (Bike Stores case)</h3>
+            <p class="m-project__desc">An interactive two-page Power BI dashboard analyzing sales and product performance for a bike retail business using the BikeStores Sample Database. Built with SQL Server for data modeling and DAX for KPI calculations, covering revenue trends, discount impact, and inventory health metrics like sell-through rate and dead stock value to support data-driven business decisions.</p>
+            <div class="m-project__foot">
+              <a class="m-textbtn" href="assets/Portofolio - Data Analytics Case Study - Kevin Budiawan.pdf" target="_blank" rel="noopener">View presentation ↗</a>
+              <button type="button" class="m-textbtn" data-project="sales-product-performance">Read case study</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="m-project" data-reveal>
+          <div class="m-project__media">
+            <img src="assets/img/Project_2.png" alt="Agricultural forecasting dashboard preview" loading="lazy">
+          </div>
+          <div>
+            <div class="m-project__tags">Power BI · Python · Time series / ML</div>
+            <h3>Forecasting Agricultural Products</h3>
+            <p class="m-project__desc">Forecasted Indonesia's agricultural PPI 10 years ahead using SARIMAX/ARIMA and 30+ years of historical data, achieving 1.48% MAPE and 96% R² through walk-forward validation, with results visualized in Power BI.</p>
+            <div class="m-project__foot">
+              <a class="m-textbtn" href="https://github.com/KevinBudiawanSidarta/Forecasting_agirucultural_products" target="_blank" rel="noopener">View repository ↗</a>
+              <button type="button" class="m-textbtn" data-project="ppi-forecast">Read case study</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="m-project" data-reveal>
+          <div class="m-project__media">
+            <img src="assets/img/Project_3.png" alt="Advertising effectiveness analysis preview" loading="lazy">
+          </div>
+          <div>
+            <div class="m-project__tags">Python · Regression · Machine Learning</div>
+            <h3>Advertising Effectiveness Prediction</h3>
+            <p class="m-project__desc">Analyzed sales generated across 3 advertising media and built a Linear Regression model to predict sales performance based on advertising spend, identifying the media with the strongest potential impact on sales.</p>
+            <div class="m-project__foot">
+              <a class="m-textbtn" href="https://github.com/KevinBudiawanSidarta/Project_FIKOM_Prediksi_Efektifvitas_Advertising" target="_blank" rel="noopener">View repository ↗</a>
+              <button type="button" class="m-textbtn" data-project="advertise-budget">Read case study</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="m-project" data-reveal>
+          <div class="m-project__media">
+            <img src="assets/img/Project_4.png" alt="Customer churn dashboard preview" loading="lazy">
+          </div>
+          <div>
+            <div class="m-project__tags">Python · Power BI · Business Intelligence</div>
+            <h3>Customer Churn Analysis Dashboard</h3>
+            <p class="m-project__desc">Automated dashboard uncovering churn drivers across customer segments through preprocessing and exploratory data analysis, built for clarity and fast decision-making.</p>
+            <div class="m-project__foot">
+              <a class="m-textbtn" href="https://github.com/KevinBudiawanSidarta/Customer-Churn-Analysis" target="_blank" rel="noopener">View repository ↗</a>
+              <button type="button" class="m-textbtn" data-project="churn-dashboard">Read case study</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="m-project" data-reveal>
+          <div class="m-project__media">
+            <img src="assets/img/Project_5.png" alt="F1 race outcome prediction preview" loading="lazy">
+          </div>
+          <div>
+            <div class="m-project__tags">Python · Machine Learning · Scientific writing</div>
+            <h3>F1 Race Outcome Prediction (Mexico City GP)</h3>
+            <p class="m-project__desc">Comparative machine learning study predicting Formula 1 race outcomes, benchmarking 5 machine learning models with Optuna and GridSearch tuning.</p>
+            <div class="m-project__foot">
+              <a class="m-textbtn" href="assets/Scientific_Writing_KevinBudiawanSidarta.pdf" target="_blank" rel="noopener">View paper ↗</a>
+              <button type="button" class="m-textbtn" data-project="f1-race-prediction">Read case study</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="m-project" data-reveal>
+          <div class="m-project__media">
+            <img src="assets/img/Project_1.png" alt="Pizza store sales dashboard preview" loading="lazy">
+          </div>
+          <div>
+            <div class="m-project__tags">Power BI · SQL · Business Intelligence</div>
+            <h3>Sales Dashboard (Pizza Sales Studycase)</h3>
+            <p class="m-project__desc">Interactive Power BI dashboard analyzing order trends and category sales distribution, tracking KPIs like total revenue, items sold, and average items per order.</p>
+            <div class="m-project__foot">
+              <a class="m-textbtn" href="https://github.com/KevinBudiawanSidarta/Sales_Dashboard-Pizza-sales-study-case-" target="_blank" rel="noopener">View repository ↗</a>
+              <button type="button" class="m-textbtn" data-project="pizza-sales">Read case study</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Upcoming ===== -->
+  <section class="m-section">
+    <div class="wrap wrap--wide" data-reveal>
+      <div class="m-head">
+        <span class="mono">[ In the garage ]</span>
+        <h2>More projects, on the way ~.</h2>
+        <p>Reserved slots for what's next, new builds get parked here as they're finished.</p>
+      </div>
+
+      <div class="m-slots">
+        <div class="m-slot"><b>Upcoming project</b><span>Slot open</span></div>
+        <div class="m-slot"><b>Upcoming project</b><span>Slot open</span></div>
+        <div class="m-slot"><b>Upcoming project</b><span>Slot open</span></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== Project detail panel ===== -->
+<div class="m-panel" id="pdetail" aria-hidden="true">
+  <div class="m-panel__inner">
+    <button class="m-panel__close" id="pdetailClose" aria-label="Close">✕</button>
+
+    <span class="mono" id="pdBadge">Project</span>
+    <h2 id="pdTitle"></h2>
+    <p class="m-panel__desc" id="pdDesc"></p>
+
+    <div class="m-meta">
+      <div><span class="k">Role</span><span class="v" id="pdRole"></span></div>
+      <div><span class="k">Status</span><span class="v" id="pdStatus"></span></div>
+      <div><span class="k">Project type</span><span class="v" id="pdPeriod"></span></div>
+    </div>
+
+    <div class="m-panel__stats" id="pdStats"></div>
+
+    <div class="m-panel__block">
+      <span class="mono">Problem statement</span>
+      <h3>The Challenge</h3>
+      <p id="pdChallenge"></p>
+    </div>
+
+    <div class="m-panel__block">
+      <span class="mono">Method</span>
+      <h3>Technical Approach</h3>
+      <ul id="pdMethod"></ul>
+    </div>
+
+    <div class="m-panel__block">
+      <span class="mono">Contribution</span>
+      <h3>My Contribution</h3>
+      <ul id="pdContribution"></ul>
+    </div>
+
+    <div class="m-panel__block">
+      <span class="mono">Result</span>
+      <h3>Outcome</h3>
+      <ul id="pdOutcome"></ul>
+    </div>
+
+    <div class="m-panel__block">
+      <span class="mono">Limitations &amp; disclosure</span>
+      <p id="pdLimitations"></p>
+    </div>
+
+    <div class="m-panel__foot">
+      <a class="m-textbtn" href="#" id="pdRepoLink" target="_blank" rel="noopener">View repository ↗</a>
+      <a class="m-textbtn" href="#" id="pdBack">Back to portfolio</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Footer ===== -->
+<footer class="m-footer">
+  <div class="wrap m-footer__inner">
+    <p>© <span data-year></span> Kevin Budiawan Sidarta</p>
+    <div class="m-socials">
+      <a href="https://github.com/KevinBudiawanSidarta" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/kevinbudiawan/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="mailto:kevinbudiawan8@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Data detail project — dibaca oleh js/minimal.js */
+window.projectDetails = {
+  'pizza-sales': {
+    badge: 'Business Intelligence',
+    title: 'Sales Dashboard',
+    desc: 'Interactive Power BI dashboard analyzing order trends and category sales distribution, tracking KPIs like total revenue, items sold, and average items per order.',
+    role: 'Developer & Data Analyst',
+    status: 'Completed project',
+    period: 'Independent project',
+    stats: [
+      {k:'Core technologies', v:'2', sub:'Power BI, SQL'},
+      {k:'Project status', v:'Built', sub:'portfolio implementation'},
+      {k:'Delivery scope', v:'End-to-end', sub:'from query to dashboard'}
+    ],
+    challenge: 'Store transaction data needed to be turned into a report that store managers could actually use, one that surfaces order trends and category performance without requiring a SQL query every time.',
+    method: [
+      'Developed SQL queries to calculate key business KPIs, analyze daily and monthly sales trends, and identify category and size-level sales contributions, as well as the top 5 and bottom 5 performing products.',
+      'Cleaned and transformed raw sales data using Power Query, ensuring consistent data quality and preparing datasets for dashboard reporting.',
+      'Built an interactive Power BI dashboard with slicers for date range and category, and KPI cards for revenue, items sold, and average items per order.'
+    ],
+    contribution: [
+      'Designed the data model and wrote the SQL queries behind the report.',
+      'Built the full Power BI dashboard, from data load to final visuals.'
+    ],
+    outcome: [
+      'Delivered a self-serve dashboard tracking total revenue, items sold, and average items per order across time and category.'
+    ],
+    limitations: 'Built on a static historical dataset rather than a live data source, so the dashboard does not update automatically.',
+    repo: '#'
+  },
+  'churn-dashboard': {
+    badge: 'Business Intelligence',
+    title: 'Customer Churn Analysis Dashboard',
+    desc: 'Automated dashboard uncovering churn drivers across customer segments through preprocessing and exploratory data analysis, built for clarity and fast decision-making.',
+    role: 'Data Analyst and BI Developer',
+    status: 'Completed project',
+    period: 'Portfolio project',
+    stats: [
+      {k:'Core technologies', v:'2', sub:'Excel, Power BI'},
+      {k:'Project status', v:'Built', sub:'portfolio implementation'},
+      {k:'Delivery scope', v:'End-to-end', sub:'from cleaning to dashboard'}
+    ],
+    challenge: "Raw customer records needed to be turned into something that actually explains why customers churn, broken down by segment, so decisions don't rely on gut feeling.",
+    method: [
+      'Cleaned and preprocessed the raw customer dataset in Excel, handling missing values and inconsistent categories.',
+      'Creating measures such as COUNT, CALCULATE using DAX Query.',
+      'Built a Power BI dashboard to surface churn rate by segment alongside the underlying drivers.'
+    ],
+    contribution: [
+      'Handled data preprocessing and exploratory analysis end-to-end.',
+      'Designed and built the Power BI dashboard layout and visuals.'
+    ],
+    outcome: [
+      'Developed a customer churn dashboard that identified key churn patterns across contract types, payment methods, tenure groups, and customer segments, helping businesses pinpoint high-risk customers and inform targeted retention strategies.'
+    ],
+    limitations: 'Analysis is descriptive rather than predictive, it explains historical churn patterns but does not score individual customers for churn risk.',
+    repo: '#'
+  },
+  'ppi-forecast': {
+    badge: 'Time series / ML',
+    title: 'Agricultural Producer Price Forecasting',
+    desc: "SARIMAX/ARIMA model forecasting Indonesia's agricultural producer price index (PPI) 10 years ahead using 30+ years of historical data, validated at 1.48% MAPE and 96% R² via walk-forward testing, visualized in an interactive Power BI dashboard.",
+    role: 'Machine Learning Developer',
+    status: 'Completed project',
+    period: 'Independent project',
+    stats: [
+      {k:'Core technologies', v:'3', sub:'Python, Machine Learning, Power BI'},
+      {k:'Project status', v:'Built', sub:'Portfolio implementation'},
+      {k:'Delivery scope', v:'End-to-end', sub:'Data prep to dashboarding'}
+    ],
+    challenge: "Indonesia's agricultural producer price index is long-horizon and seasonal, which makes a reliable 10-year-ahead forecast hard to produce without a model built specifically for that structure.",
+    method: [
+      'Prepared 30+ years of historical PPI data and tested it for stationarity and seasonality.',
+      'Built and tuned a SARIMAX/ARIMA model to capture trend and seasonal components.',
+      'Validated performance with walk-forward testing, reaching 1.48% MAPE and roughly 96% R².',
+      'Visualized the forecast in an interactive Power BI dashboard.'
+    ],
+    contribution: [
+      'Built and tuned the SARIMAX/ARIMA forecasting model from data prep through validation.',
+      'Designed the Power BI dashboard used to present the forecast.'
+    ],
+    outcome: [
+      'Delivered a 10-year-ahead PPI forecast validated at 1.48% MAPE and roughly 96% R² through walk-forward testing.',
+      'Visualized 10-year PPI predictions for individual agricultural commodities in an interactive dashboard.'
+    ],
+    limitations: 'Forecast accuracy depends on historical patterns continuing to hold; it does not account for unpredictable shocks like extreme weather or policy changes.',
+    repo: '#'
+  },
+  'advertise-budget': {
+    badge: 'Regression / ML',
+    title: 'Advertising Effectiveness Prediction',
+    desc: 'Analyzed sales generated across three advertising media and built a Linear Regression model to predict sales performance based on advertising spend, identifying the media with the strongest potential impact on sales.',
+    role: 'Machine Learning Developer',
+    status: 'Completed Team Project',
+    period: 'Team Project',
+    stats: [
+      {k:'Core skills', v:'3', sub:'Python, Data Preparation, Regression Analysis'},
+      {k:'Project status', v:'Built', sub:'Team Project'},
+      {k:'Delivery scope', v:'End-to-end', sub:'from preprocessing to deployment'}
+    ],
+    challenge: 'Determining which advertising medium had the strongest relationship with sales while working with a limited dataset covering only three advertising channels.',
+    method: [
+      'Analyzed feature correlations to identify which factors had the strongest relationship with sales.',
+      'Data preparation such as handling outliers, feature selection, and normalization',
+      'Trained and evaluated Linear Regression model on 3 evaluation metrics such as MAE, MSE, RMSE ,and R² resulting 90+% accuracy on prediction.'
+    ],
+    contribution: [
+      'Built the preprocessing pipeline.',
+      'Trained, tuned, and evaluated model.'
+    ],
+    outcome: [
+      'Achieved 90%+ prediction accuracy, providing data-driven insights to support business decision-making.'
+    ],
+    limitations: 'Trained and validated on a single historical dataset and small data dimension',
+    repo: '#'
+  },
+  'f1-race-prediction': {
+    badge: 'Machine Learning / Scientific writing',
+    title: 'F1 Race Outcome Prediction — 2025 Mexico City Grand Prix',
+    desc: 'Comparative machine learning study predicting Formula 1 race outcomes for the Mexico City Grand Prix, benchmarking 5 regression algorithms with Optuna and Gridsearch parameter tuning to identify the strongest predictor of race results.',
+    role: 'Machine Learning Developer & Researcher',
+    status: 'Completed',
+    period: 'Undergraduate Thesis',
+    stats: [
+      {k:'Models compared', v:'5', sub:'RF, Gradient Boosting, XGBoost, CatBoost, LightGBM'},
+      {k:'Best result', v:'R² ≈ 0.97', sub:'GradientBoosting + Optuna tuning'},
+      {k:'Project status', v:'Completed', sub:'Scientific writing'}
+    ],
+    challenge: "Predicting Formula 1 race outcomes is difficult because results depend on a mix of driver form, car performance, qualifying position, and race-specific conditions that don't reduce neatly to a single dominant feature.",
+    method: [
+      'Collected and engineered historical F1 data, qualifying results, driver/constructor standings, and race-specific features, for the Mexico City Grand Prix.',
+      'Trained and compared five regression algorithms: Random Forest, Gradient Boosting, XGBoost, CatBoost, and LightGBM.',
+      'Tuned each model with Optuna to search the hyperparameter space and reduce prediction error.',
+      'Evaluated all models on R² and error metrics to identify the strongest predictor of race outcome.'
+    ],
+    contribution: [
+      'Designed the feature engineering pipeline from raw race data.',
+      'Built, tuned, and benchmarked all five models end-to-end.'
+    ],
+    outcome: [
+      'Gradient Boosting emerged as the best-performing model, reaching an R² of approximately 0.97 after Optuna tuning.',
+      'Established a reusable comparative framework for evaluating regression models on race outcome prediction.',
+      'Achieved an A grade through strong project performance and lecturer evaluation.'
+    ],
+    limitations: 'Trained on historical data specific to the Mexico City Grand Prix, so generalization to other circuits has not yet been validated.',
+    repo: '#'
+  },
+  'sales-product-performance': {
+    badge: 'Data Analysis / Business Intelligence',
+    title: 'Sales & Product Performance Analysis Dashboard (Bike Stores case)',
+    desc: 'An interactive two-page Power BI dashboard analyzing sales and product performance for a bike retail business using the BikeStores Sample Database. Built with SQL Server for data modeling and DAX for KPI calculations, covering revenue trends, discount impact, and inventory health metrics like sell-through rate and dead stock value to support data-driven business decisions.',
+    role: 'Developer & Data Analyst',
+    status: 'Completed',
+    period: 'Independent project',
+    stats: [
+      {k:'Core technologies', v:'2', sub:'Power BI/Query'},
+      {k:'Project status', v:'Built', sub:'portfolio implementation'},
+      {k:'Delivery scope', v:'End-to-end', sub:'from query to dashboard'}
+    ],
+    challenge: "Beyond basic aggregations, this project required building time-intelligence DAX measures (MoM/YoY growth), multi-condition metrics like sell-through rate and dead stock valuation, and correlation analysis between discount rates and sales volume, all while maintaining consistent business logic (e.g., excluding rejected orders) across every KPI.",
+    method: [
+      'Structured a star schema in Power BI from the BikeStores relational database, with orders and order_items as fact tables connected to products, customers, stores, and a dedicated DimDate table for time intelligence.',
+      'KPI Development, Built modular DAX measures for revenue, average order value, discount impact, sell-through rate, and dead stock valuation, layering CALCULATE, SUMX, and DIVIDE to keep business logic (e.g., excluding rejected orders) consistent across every metric.',
+      'Combined stock and sales data to calculate sell-through rate and dead stock value, and used scatter plot correlation analysis to evaluate whether discounting effectively drove sales volume.',
+      'Designed a two-page interactive report (Sales Performance and Product Performance) with cross-page navigation, combo charts, and conditional formatting to surface actionable insights at a glance.'
+    ],
+    contribution: [
+      'Designed the data model and wrote the Power queries behind the report.',
+      'Built the full Power BI dashboard, from data load to final visuals.'
+    ],
+    outcome: [
+      'Successfully delivered a two-page interactive Power BI dashboard that uncovered a flat, ineffective discount strategy and a growing stock-revenue imbalance in newer product lines, surfacing Rp 11.4M in dead stock value and giving the business a concrete, data-backed basis for pricing and inventory decisions.'
+    ],
+    limitations: 'This dashboard uses the static BikeStores sample dataset rather than a live production database, so it lacks a real-time data source and cannot be automatically refreshed, all KPIs reflect a fixed historical snapshot rather than an ongoing, up-to-date view of business performance.',
+    repo: '#'
+  }
+};
+</script>
+<script src="js/minimal.js"></script>
+</body>
+</html>
